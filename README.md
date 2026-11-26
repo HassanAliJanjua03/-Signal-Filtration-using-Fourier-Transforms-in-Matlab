@@ -18,12 +18,29 @@ flowchart LR
 - Sinusoidal components at 50 Hz and 150 Hz, plus Gaussian noise.
 - FFT, centered frequency spectrum, ideal 100 Hz low-pass mask and inverse FFT.
 
+## Filter design
+
+![Analytical ideal low-pass filter mask](docs/fft-filter-design.svg)
+
+The figure depicts the mask defined in the MATLAB script rather than a measured simulation result.
+
+| Parameter | Value |
+| --- | ---: |
+| Sampling rate | 1,000 Hz |
+| Samples | 1,000 |
+| FFT frequency resolution | 1 Hz |
+| Desired component | 50 Hz |
+| Higher-frequency component | 150 Hz |
+| Low-pass cutoff | 100 Hz |
+
+The mask retains bins where the absolute frequency is at most 100 Hz. Consequently, the 50 Hz sinusoid is preserved by the ideal mask and the 150 Hz sinusoid is removed; noise within the passband remains.
+
 ## Project files
 
 | File | Purpose |
 | --- | --- |
-| [Signals.m](Signals.m) | Original source or design file |
-| [Signals & Systems Project Report.pdf](Signals%20%26%20Systems%20Project%20Report.pdf) | Original source or design file |
+| [Signals.m](Signals.m) | MATLAB script |
+| [Signals & Systems Project Report.pdf](Signals%20%26%20Systems%20Project%20Report.pdf) | Engineering report (PDF) |
 
 ## How to explore or reproduce
 
